@@ -96,6 +96,16 @@ const Index = () => {
     setTimeLeft(focusTime * 60);
   };
 
+  const skipToBreak = () => {
+    setIsBreak(true);
+    setTimeLeft(breakTime * 60);
+    setIsRunning(true);
+    toast({
+      title: "Break Started 🌿",
+      description: "Taking a well-deserved break early.",
+    });
+  };
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -195,6 +205,17 @@ const Index = () => {
             >
               <RotateCcw className="h-5 w-5" />
             </Button>
+
+            {isRunning && !isBreak && (
+              <Button
+                onClick={skipToBreak}
+                size="lg"
+                variant="secondary"
+                className="rounded-full px-6 h-16 shadow-lg transition-all hover:scale-105"
+              >
+                Start Break
+              </Button>
+            )}
           </div>
 
           {/* Quote */}

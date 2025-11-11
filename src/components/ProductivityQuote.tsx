@@ -29,6 +29,10 @@ const quotes = [
     text: "The present moment is filled with joy and happiness. If you are attentive, you will see it.",
     author: "Thich Nhat Hanh",
   },
+  {
+    text: "It's not always that we need to do more but rather that we need to focus on less.",
+    author: "Nathan W. Morris",
+  },
 ];
 
 export const ProductivityQuote = () => {
